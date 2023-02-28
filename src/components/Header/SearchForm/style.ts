@@ -8,7 +8,6 @@ export const StyledSearchForm = styled.form`
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-
   padding: 8px;
   border-radius: 8px;
   border: 2px solid ${({ theme }) => theme.colors.gray100};
