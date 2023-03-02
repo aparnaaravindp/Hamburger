@@ -3,7 +3,6 @@ import CartProductCard from './CartProductCard';
 import { StyledCartProductList } from './style';
 import { StyledButton } from '../../../styles/button';
 import { StyledParagraph } from '../../../styles/typography';
-
 import { CartContext } from '../../../providers/CartContext/CartContext';
 
 const CartProductList = () => {

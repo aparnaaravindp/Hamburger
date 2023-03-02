@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import ShopPage from './pages/ShopPage';
+import { ProtectedRoutes } from './ProtectedRoutes';
 import { CartProvider } from './providers/CartContext/CartContext';
 
 const Router = () => (
@@ -13,6 +14,7 @@ const Router = () => (
       element={
         <CartProvider>
           <ShopPage />
+          <ProtectedRoutes />
         </CartProvider>
       }
     />

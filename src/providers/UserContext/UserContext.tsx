@@ -2,6 +2,8 @@
 import { createContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { AxiosError } from 'axios';
+
 import {
   IDefaultProviderProps,
   ILoginData,
@@ -56,6 +58,14 @@ export const UserProvider = ({ children }: IDefaultProviderProps) => {
       navigate('/');
     } catch (error) {
       console.log(error);
+      const currentError = error as AxiosError<string>;
+      if (currentError.response?.data === 'Email already exists') {
+        toast.error('Email já existe', { autoClose: 2000 });
+      } else if (currentError.response?.data === 'Email format is invalid') {
+        toast.error('Formato de email inválido', { autoClose: 2000 });
+      } else {
+        toast.error('Ops! Algo deu errado', { autoClose: 2000 });
+      }
     }
   };
 
